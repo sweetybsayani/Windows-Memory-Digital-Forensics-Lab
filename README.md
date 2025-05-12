@@ -15,15 +15,7 @@ Globomantics security team has detected unusual activity on one of their critica
 - Extract forensic evidence to determine attack vectors
 - Document findings in a professional forensic report
 
-## Environment Requirements
-
-- Windows 10 machine (physical or virtual)
-- At least 8GB RAM
-- 10GB free disk space
-- Internet connection for initial setup only
-- Administrator privileges
-
-## Lab Setup Instructions for CMD (Command Prompt)
+## Lab Setup Instructions 
 
 1. Clone the repository to your local machine:
    ```
