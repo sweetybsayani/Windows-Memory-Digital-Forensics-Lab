@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# process_scanner.py - Suspicious process detection for Windows Memory Forensics Lab
 
 import os
 import sys
@@ -10,13 +9,10 @@ from tqdm import tqdm
 import random
 from prettytable import PrettyTable
 
-# Initialize colorama
 colorama.init()
 
-# Set paths
 EVIDENCE_PATH = os.path.join(os.getcwd(), "evidence")
 
-# ASCII art banner
 def print_banner():
     banner = """
  _____                              _____                                 
@@ -33,18 +29,14 @@ def print_banner():
     print(Fore.WHITE + "Identifying suspicious processes in memory dumps" + Style.RESET_ALL)
     print(Fore.YELLOW + "=" * 80 + Style.RESET_ALL + "\n")
 
-# Simulate process scanning
 def scan_processes(memory_dump):
     print(Fore.GREEN + f"[+] Scanning processes in memory dump: {memory_dump}" + Style.RESET_ALL)
     
-    # Simulate scanning
     print(Fore.CYAN + "[*] Running process scan..." + Style.RESET_ALL)
     
-    # Progress bar
     for i in tqdm(range(100), desc="    Progress", ncols=80, bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt}"):
         time.sleep(random.uniform(0.01, 0.03))
     
-    # Process table header
     table = PrettyTable()
     table.field_names = ["PID", "PPID", "Process Name", "Path", "Created", "Status", "Risk Score"]
     table.align = "l"
@@ -67,7 +59,6 @@ def scan_processes(memory_dump):
                 path = parts[3]
                 created = parts[4]
                 
-                # Assign risk scores and status
                 risk_score = 0
                 status = "Normal"
                 
@@ -88,7 +79,6 @@ def scan_processes(memory_dump):
                     risk_score = 0
                     status = Fore.GREEN + "NORMAL" + Style.RESET_ALL
                 
-                # Add row to table
                 table.add_row([pid, ppid, name, path, created, status, risk_score])
     
     except Exception as e:
@@ -99,13 +89,11 @@ def scan_processes(memory_dump):
     print("\n" + Fore.GREEN + "[+] Process scan complete!" + Style.RESET_ALL)
     print(table)
     
-    # Print suspicious processes summary
     print(Fore.YELLOW + "\nSuspicious Processes Summary:" + Style.RESET_ALL)
     print(Fore.RED + "[!] PID 3244: svchost_update.exe - Unusual name for svchost process" + Style.RESET_ALL)
     print(Fore.RED + "[!] PID 3536: cmd.exe - Spawned by suspicious process" + Style.RESET_ALL)
     print(Fore.RED + "[!] PID 3724: powershell.exe - Potentially obfuscated command execution" + Style.RESET_ALL)
     
-    # Print network connections for suspicious processes
     print(Fore.YELLOW + "\nNetwork Connections for Suspicious Processes:" + Style.RESET_ALL)
     
     try:
@@ -139,7 +127,6 @@ def scan_processes(memory_dump):
     except Exception as e:
         print(Fore.RED + f"[!] Error reading network connections: {e}" + Style.RESET_ALL)
     
-    # Next steps
     print(Fore.YELLOW + "\nNext Steps:" + Style.RESET_ALL)
     print(Fore.WHITE + "1. Run 'python evidence_collector.py globomantics_workstation1.raw 3244' to analyze the main suspicious process" + Style.RESET_ALL)
     print(Fore.WHITE + "2. Run 'python evidence_collector.py globomantics_workstation1.raw 3724' to analyze the PowerShell activity" + Style.RESET_ALL)
@@ -149,7 +136,7 @@ def scan_processes(memory_dump):
 def main():
     print_banner()
     
-    # Check command line arguments
+    # Check cli arguments
     if len(sys.argv) < 2:
         print(Fore.RED + "[!] Please specify a memory dump file!" + Style.RESET_ALL)
         print(Fore.WHITE + "Usage: python process_scanner.py <memory_dump_file>" + Style.RESET_ALL)
@@ -158,7 +145,6 @@ def main():
     
     memory_dump = sys.argv[1]
     
-    # Check if evidence directory exists
     if not os.path.exists(EVIDENCE_PATH):
         print(Fore.RED + "[!] Evidence directory not found!" + Style.RESET_ALL)
         print(Fore.RED + "[!] Please run setup.py first to configure the lab environment." + Style.RESET_ALL)
