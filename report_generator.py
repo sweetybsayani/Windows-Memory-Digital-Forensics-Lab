@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# report_generator.py - Final report generator for Windows Memory Forensics Lab
 
 import os
 import sys
