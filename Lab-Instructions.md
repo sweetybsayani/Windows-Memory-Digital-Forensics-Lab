@@ -42,17 +42,12 @@ Through a series of guided exercises, you'll learn to:
 
 ### Task 1: Analyze the Memory Dump
 
-1. Open Command Prompt (CMD) as Administrator
-2. Navigate to the lab directory:
-   ```
-   cd C:\path\to\Windows-Memory-Forensics-Lab
-   ```
-3. Run the memory analysis script:
+1. Run the memory analysis script:
    ```
    python analyze_memory.py
    ```
-4. When prompted, select the memory dump to analyze (option 1 for workstation dump)
-- Choose option 1 (globomantics_workstation1.raw)
+2. When prompted, select the memory dump to analyze (option 1 for workstation dump)
+- Choose option 1 or 2 (globomantics_workstation1.raw)
 - Review the initial analysis results
 
 ### Task 2: Process Identification & Analysis
