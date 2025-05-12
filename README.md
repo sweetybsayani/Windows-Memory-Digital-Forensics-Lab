@@ -9,7 +9,7 @@ Globomantics security team has detected unusual activity on one of their critica
 
 ## Lab Environment Diagram
 
-![Lab Environment Diagram](https://github.com/sweetybsayani/Windows-Memory-Forensics-Lab/raw/main/lab diagram forensics.png)
+![Lab Environment Diagram]([https://github.com/sweetybsayani/Windows-Memory-Forensics-Lab/raw/main/lab diagram forensics.png](https://github.com/sweetybsayani/Windows-Memory-Digital-Forensics-Lab/blob/main/lab%20diagram%20forensics.png))
 
 ## Prerequisites
 
