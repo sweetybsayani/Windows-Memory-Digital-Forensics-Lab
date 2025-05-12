@@ -17,12 +17,13 @@ Through a series of guided exercises, you'll learn to:
 
 1. Clone the repository to your local machine:
    ```
-   git clone https://github.com/sweetybsayani/Windows-Memory-Forensics-Lab.git
+   git clone https://github.com/sweetybsayani/Windows-Memory-Digital-Forensics-Lab.git
+
    ```
 
 2. Navigate to the lab directory:
    ```
-   cd Windows-Memory-Forensics-Lab
+   cd Windows-Memory-Digital-Forensics-Lab
    ```
 
 3. Run the environment setup script from Command Prompt as Administrator:
