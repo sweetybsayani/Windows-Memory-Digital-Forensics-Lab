@@ -18,7 +18,6 @@ EVIDENCE_PATH = os.path.join(os.getcwd(), "evidence")
 REPORTS_PATH = os.path.join(os.getcwd(), "reports")
 WORKDIR_PATH = os.path.join(os.getcwd(), "workdir")
 
-# ASCII art banner
 def print_banner():
     banner = """
  ______      _     _                      _____      _ _           _             
@@ -87,10 +86,10 @@ def extract_evidence(memory_dump, pid):
     
     print(Fore.CYAN + f"[*] Found process: {process_name} (PID: {pid})" + Style.RESET_ALL)
     
-    # Simulate evidence extraction
+
     print(Fore.CYAN + "[*] Extracting process memory..." + Style.RESET_ALL)
     
-    # Progress bar
+
     for i in tqdm(range(100), desc="    Progress", ncols=80, bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt}"):
         time.sleep(random.uniform(0.01, 0.03))
     
@@ -189,8 +188,7 @@ def extract_evidence(memory_dump, pid):
     else:
         print(Fore.YELLOW + "\nNo specific evidence templates available for this process." + Style.RESET_ALL)
         print(Fore.YELLOW + "Generic process information extracted." + Style.RESET_ALL)
-    
-    # Simulated extraction success
+
     print(Fore.GREEN + "\n[+] Evidence extraction complete!" + Style.RESET_ALL)
     print(Fore.CYAN + f"[*] Evidence for PID {pid} ({process_name}) has been extracted successfully." + Style.RESET_ALL)
     
@@ -511,7 +509,6 @@ def generate_report():
     with open(report_file, "w") as f:
         f.write(html_content)
     
-    # Open report in browser
     try:
         import webbrowser
         webbrowser.open(f"file://{os.path.abspath(report_file)}")
@@ -520,7 +517,7 @@ def generate_report():
         print(Fore.GREEN + f"\n[+] Report generated: {report_file}" + Style.RESET_ALL)
         print(Fore.YELLOW + f"[*] Please open the report in your browser manually." + Style.RESET_ALL)
     
-    # Prompt for reflection
+
     print(Fore.YELLOW + "\nReflection Questions:" + Style.RESET_ALL)
     print(Fore.WHITE + "1. What key information is included that management would need?" + Style.RESET_ALL)
     print(Fore.WHITE + "2. How would you improve this report for a real-world scenario?" + Style.RESET_ALL)
@@ -530,7 +527,6 @@ def generate_report():
 def main():
     print_banner()
     
-    # Check command line arguments
     if len(sys.argv) < 3:
         print(Fore.RED + "[!] Please specify a memory dump file and a process ID!" + Style.RESET_ALL)
         print(Fore.WHITE + "Usage: python evidence_collector.py <memory_dump_file> <PID>" + Style.RESET_ALL)
@@ -546,7 +542,7 @@ def main():
         print(Fore.RED + "[!] Please run setup.py first to configure the lab environment." + Style.RESET_ALL)
         sys.exit(1)
     
-    # Create workdir directory if it doesn't exist
+  
     if not os.path.exists(WORKDIR_PATH):
         os.makedirs(WORKDIR_PATH)
     
