@@ -39,7 +39,7 @@ Globomantics security team has detected unusual activity on one of their critica
    - Create working directories
    - Verify all components are properly configured
 
-## Lab Tasks & Execution From CMD
+## Lab Tasks & Execution Workflow
 
 ### Task 1: Analyze the Memory Dump
 
@@ -53,6 +53,8 @@ Globomantics security team has detected unusual activity on one of their critica
    python analyze_memory.py
    ```
 4. When prompted, select the memory dump to analyze (option 1 for workstation dump)
+- Choose option 1 (globomantics_workstation1.raw)
+- Review the initial analysis results
 
 ### Task 2: Process Identification & Analysis
 
@@ -76,6 +78,8 @@ Globomantics security team has detected unusual activity on one of their critica
    python evidence_collector.py globomantics_workstation1.raw 3724
    ```
 2. Analyze the extracted artifacts for each process
+- Analyze command lines, network connections, and memory strings
+- Look for malicious behaviors in each process
 
 ### Task 4: Malware Indicators Extraction
 
