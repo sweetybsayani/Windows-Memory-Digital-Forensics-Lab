@@ -1,7 +1,3 @@
-# Windows Memory Forensics Lab
-
-A hands-on lab for learning Windows memory forensics with a realistic Dark Kittens attack scenario.
-
 ## Lab Environment Diagram
 
 ![Lab Environment Diagram](https://github.com/sweetybsayani/Windows-Memory-Forensics-Lab/raw/main/lab_diagram.png)
@@ -24,55 +20,22 @@ Globomantics security team has detected unusual activity on one of their critica
 ## Prerequisites
 
 - Windows or Linux or MacOS 
-- Command Prompt (CMD) or Terminal with Administrator privileges
-- At least 8GB RAM
-- 5 GB free disk space
+- Command Prompt (CMD) or Terminal with Admin/Sudo privileges
+- At least 8GB RAM & 5 GB free disk space
 - Internet connection for initial setup only
-- Git installed (for cloning the repository)
+- Git installed (for cloning the repo)
 
-## Detailed Setup Instructions
+## Learning Objectives
 
-1. **Clone the Repository**:
-   ```cmd
-   git clone https://github.com/sweetybsayani/Windows-Memory-Forensics-Lab.git
-   cd Windows-Memory-Forensics-Lab
-   ```
+- Set up a memory forensics environment on Windows
+- Use Volatility to analyze Windows memory dumps
+- Identify suspicious processes, network connections, and malware artifacts
+- Extract forensic evidence to determine attack vectors
+- Document findings in a professional forensic report
 
-2. **Run the Setup Script**:
-   ```cmd
-   python setup.py
-   ```
-   This script will:
-   - Download and install Python (if not already installed)
-   - Install required Python packages (pefile, yara-python, colorama, prettytable, tqdm, requests)
-   - Download Volatility framework
-   - Download sample memory dumps
-   - Create working directories (tools, memory_dumps, evidence, reports, workdir)
-   - Generate simulated artifacts for the lab
+## References
 
-3. **Verify Installation**:
-   After the setup completes, you should see the following message:
-   ```
-   LAB SETUP COMPLETE
-   ======================================================================
-   
-   Your Windows Memory Forensics Lab is now set up and ready to use.
-   
-   To start the lab:
-   1. Open Command Prompt
-   2. Navigate to the lab directory
-   3. Run: python analyze_memory.py
-   
-   Please follow the instructions in the README.md file for detailed steps.
-   ======================================================================
-   ```
-
-
-## Troubleshooting
-
-- **Python Not Found**: Ensure Python is installed and in your PATH
-- **Module Import Errors**: Run `pip install -r requirements.txt` to install dependencies
-- **Permission Errors**: Make sure you're running CMD as Administrator
-- **Script Errors**: Check error messages and ensure all directories exist
-
-
+- Volatility Documentation: https://github.com/volatilityfoundation/volatility/wiki
+- SANS Memory Forensics Cheat Sheet: https://www.sans.org/blog/memory-forensics-cheat-sheet/
+- Windows Registry Forensics: https://www.sciencedirect.com/topics/computer-science/windows-registry-forensics
+- MITRE ATT&CK Framework: https://attack.mitre.org/
