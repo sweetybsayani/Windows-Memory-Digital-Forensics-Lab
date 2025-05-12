@@ -17,7 +17,6 @@ colorama.init()
 EVIDENCE_PATH = os.path.join(os.getcwd(), "evidence")
 REPORTS_PATH = os.path.join(os.getcwd(), "reports")
 
-# ASCII art banner
 def print_banner():
     banner = """
  _____       _____   _______      _                  _             
@@ -34,7 +33,6 @@ def print_banner():
     print(Fore.WHITE + "Extracting Indicators of Compromise from memory dumps" + Style.RESET_ALL)
     print(Fore.YELLOW + "=" * 80 + Style.RESET_ALL + "\n")
 
-# Extract IoCs from specified processes
 def extract_iocs(memory_dump, pids):
     print(Fore.GREEN + f"[+] Extracting IoCs from memory dump: {memory_dump}" + Style.RESET_ALL)
     print(Fore.CYAN + f"[*] Target PIDs: {', '.join(pids)}" + Style.RESET_ALL)
@@ -75,14 +73,11 @@ def extract_iocs(memory_dump, pids):
     for pid in valid_pids:
         print(Fore.WHITE + f"    PID {pid}: {process_names[pid]}" + Style.RESET_ALL)
     
-    # Simulate IoC extraction
     print(Fore.CYAN + "\n[*] Scanning process memory for indicators..." + Style.RESET_ALL)
     
-    # Progress bar
     for i in tqdm(range(100), desc="    Progress", ncols=80, bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt}"):
         time.sleep(random.uniform(0.01, 0.04))
-    
-    # Create IoC categories and tables
+
     print(Fore.GREEN + "\n[+] Indicators of Compromise extracted:" + Style.RESET_ALL)
     
     # Files
@@ -300,7 +295,6 @@ def main():
     memory_dump = sys.argv[1]
     pids = sys.argv[2:]
     
-    # Check if evidence directory exists
     if not os.path.exists(EVIDENCE_PATH):
         print(Fore.RED + "[!] Evidence directory not found!" + Style.RESET_ALL)
         print(Fore.RED + "[!] Please run setup.py first to configure the lab environment." + Style.RESET_ALL)
