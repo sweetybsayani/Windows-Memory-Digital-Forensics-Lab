@@ -10,7 +10,7 @@ import shutil
 import ctypes
 import time
 
-# Check for administrative privileges
+# Check for admin privileges
 def is_admin():
     try:
         return ctypes.windll.shell32.IsUserAnAdmin()
@@ -23,7 +23,7 @@ if not is_admin():
     input("Press Enter to exit...")
     sys.exit(1)
 
-# Create directory structure
+# Create dir structure
 def create_directories():
     print("[+] Creating directory structure...")
     
@@ -40,7 +40,7 @@ def create_directories():
             os.makedirs(directory)
             print(f"  - Created {directory} directory")
 
-# Download required files
+# Download req.files
 def download_files():
     print("[+] Downloading required files...")
     
@@ -72,7 +72,6 @@ def download_files():
                 urllib.request.urlretrieve(file_info["url"], file_info["destination"])
                 print(f"    Downloaded {file_info['description']}")
                 
-                # Extract if it's a zip file
                 if file_info["destination"].endswith(".zip"):
                     print(f"    Extracting {file_info['description']}...")
                     with zipfile.ZipFile(file_info["destination"], 'r') as zip_ref:
@@ -83,7 +82,6 @@ def download_files():
         else:
             print(f"  - {file_info['description']} already downloaded")
 
-# Check and install Python if needed
 def check_python():
     print("[+] Checking Python installation...")
     
@@ -105,7 +103,6 @@ def check_python():
         
         print("  - Python installation completed")
 
-# Install required Python packages
 def install_packages():
     print("[+] Installing required Python packages...")
     
@@ -126,11 +123,10 @@ def install_packages():
         except Exception as e:
             print(f"    Error installing {package}: {e}")
 
-# Create simulated malware artifacts for the lab
 def create_artifacts():
     print("[+] Creating lab artifacts...")
     
-    # Create the lab data file with Dark Kittens IOCs
+    # Create  lab data file with Dark Kittens IOCs
     ioc_data = """
 # Dark Kittens IOC Data
 # For educational purposes only
@@ -149,7 +145,6 @@ KEYLOGGER_LOG=C:\\ProgramData\\Microsoft\\Crypto\\keylog.dat
     with open("evidence/dark_kittens_ioc.txt", "w") as f:
         f.write(ioc_data)
     
-    # Create simulated registry data
     reg_data = """
 # Windows Registry data extracted from memory
 # Process ID: 3244 (svchost_update.exe)
@@ -164,7 +159,6 @@ KEYLOGGER_LOG=C:\\ProgramData\\Microsoft\\Crypto\\keylog.dat
     with open("evidence/registry_data.txt", "w") as f:
         f.write(reg_data)
     
-    # Create simulated network connections
     network_data = """
 # Network connections extracted from memory dump
 # Format: PID,Process_Name,Local_Address,Foreign_Address,State
@@ -180,7 +174,6 @@ KEYLOGGER_LOG=C:\\ProgramData\\Microsoft\\Crypto\\keylog.dat
     with open("evidence/network_connections.txt", "w") as f:
         f.write(network_data)
     
-    # Create simulated process list
     process_data = """
 # Process list extracted from memory dump
 # Format: PID,PPID,Process_Name,Process_Path,Create_Time
@@ -200,7 +193,6 @@ KEYLOGGER_LOG=C:\\ProgramData\\Microsoft\\Crypto\\keylog.dat
     with open("evidence/process_list.txt", "w") as f:
         f.write(process_data)
 
-# Display completion message
 def completion_message():
     print("\n" + "="*70)
     print("LAB SETUP COMPLETE")
@@ -220,22 +212,16 @@ def main():
     print("="*70 + "\n")
     
     try:
-        # Check Python installation
         check_python()
         
-        # Create directory structure
         create_directories()
         
-        # Download required files
         download_files()
         
-        # Install required packages
         install_packages()
         
-        # Create lab artifacts
         create_artifacts()
         
-        # Display completion message
         completion_message()
         
     except Exception as e:
