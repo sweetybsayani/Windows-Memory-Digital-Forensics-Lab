@@ -1,7 +1,3 @@
-## Lab Environment Diagram
-
-![Lab Environment Diagram](https://github.com/sweetybsayani/Windows-Memory-Forensics-Lab/raw/main/lab_diagram.png)
-
 ## Introduction
 
 This Windows Memory Forensics Lab provides a simulated environment for security professionals and students to practice memory forensics techniques against a realistic attack scenario. The lab features the Dark Kittens threat group, a fictional APT targeting Globomantics' critical infrastructure.
