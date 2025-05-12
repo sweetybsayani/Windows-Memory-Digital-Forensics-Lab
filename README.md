@@ -1,7 +1,4 @@
 # Windows-Memory-Digital-Forensics-Lab
-This lab provides hands-on experience with memory forensics to detect Dark Kittens malware in a compromised Windows system. Learn how to analyze memory dumps to identify malicious artifacts, processes, and network connections using industry-standard tools.
-
-# Windows Memory Forensics Lab
 
 ## Overview
 This lab provides hands-on experience with memory forensics to detect Dark Kittens malware in a compromised Windows system. Learn how to analyze memory dumps to identify malicious artifacts, processes, and network connections using industry-standard tools.
@@ -112,38 +109,6 @@ Globomantics security team has detected unusual activity on one of their critica
    - What additional analysis techniques could be applied to this investigation?
    - How would you improve the response to this type of incident in a real environment?
    - What preventive measures could have detected or blocked this attack earlier?
-
-## Step-by-Step Commands for Running the Lab
-
-```
-REM Clone the repository
-git clone https://github.com/sweetybsayani/Windows-Memory-Forensics-Lab.git
-
-REM Navigate to lab directory
-cd Windows-Memory-Forensics-Lab
-
-REM Run setup script (as Administrator)
-python setup.py
-
-REM Analyze memory dump
-python analyze_memory.py
-
-REM Scan for suspicious processes
-python process_scanner.py globomantics_workstation1.raw
-
-REM Collect evidence from suspicious processes
-python evidence_collector.py globomantics_workstation1.raw 3244
-python evidence_collector.py globomantics_workstation1.raw 3536
-python evidence_collector.py globomantics_workstation1.raw 3724
-
-REM Extract indicators of compromise
-python ioc_extractor.py globomantics_workstation1.raw 3244 3536 3724
-
-REM Generate final report
-python report_generator.py
-```
-
-## Lab Structure
 
 The lab consists of the following key components:
 
