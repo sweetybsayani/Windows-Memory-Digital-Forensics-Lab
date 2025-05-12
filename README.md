@@ -7,14 +7,6 @@ This lab provides hands-on experience with memory forensics to detect Dark Kitte
 
 Globomantics security team has detected unusual activity on one of their critical workstations. The system appears to be communicating with suspicious external IPs, but traditional antivirus tools haven't detected any malware. You've been called in to analyze a memory dump from the compromised machine to identify potential Dark Kittens malware, establish persistence mechanisms, and determine what data may have been exfiltrated.
 
-## Learning Objectives
-
-- Set up a memory forensics environment on Windows
-- Use Volatility to analyze Windows memory dumps
-- Identify suspicious processes, network connections, and malware artifacts
-- Extract forensic evidence to determine attack vectors
-- Document findings in a professional forensic report
-
 ## Lab Setup Instructions 
 
 1. Clone the repository to your local machine:
@@ -137,15 +129,9 @@ You have successfully completed this lab when you can:
 
 If you encounter issues:
 
-- Ensure you're running scripts from CMD with Administrator privileges
-- Verify Python is in your PATH environment variable
+- Ensure you're running scripts from CMD with Administrator privileges or use sudo
+- Verify Python is installed and is in your PATH environment variable
+- Module Import Errors: Run `pip install -r requirements.txt` to install dependencies
 - If any script fails with an error, check the error message and try running it again
 - Make sure all directories (tools, evidence, reports, etc.) exist before running the scripts
 - If a script hangs, you can press Ctrl+C to cancel it and try again
-
-## References
-
-- Volatility Documentation: https://github.com/volatilityfoundation/volatility/wiki
-- SANS Memory Forensics Cheat Sheet: https://www.sans.org/blog/memory-forensics-cheat-sheet/
-- Windows Registry Forensics: https://www.sciencedirect.com/topics/computer-science/windows-registry-forensics
-- MITRE ATT&CK Framework: https://attack.mitre.org/
