@@ -7,6 +7,10 @@ This lab provides hands-on experience with memory forensics to detect Dark Kitte
 
 Globomantics security team has detected unusual activity on one of their critical workstations. The system appears to be communicating with suspicious external IPs, but traditional antivirus tools haven't detected any malware. You've been called in to analyze a memory dump from the compromised machine to identify potential Dark Kittens malware, establish persistence mechanisms, and determine what data may have been exfiltrated.
 
+## Lab Environment Diagram
+
+![Lab Environment Diagram](https://github.com/sweetybsayani/Windows-Memory-Forensics-Lab/raw/main/lab diagram forensics.png)
+
 ## Prerequisites
 
 - Windows or Linux or MacOS 
