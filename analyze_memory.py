@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# analyze_memory.py - Memory analysis script for Windows Memory Forensics Lab
 
 import os
 import sys
@@ -12,10 +11,8 @@ from colorama import Fore, Back, Style
 from tqdm import tqdm
 import random
 
-# Initialize colorama
 colorama.init()
 
-# Check for administrative privileges
 def is_admin():
     try:
         return ctypes.windll.shell32.IsUserAnAdmin()
@@ -53,12 +50,10 @@ _____                  _         _       __  __
     print(Fore.WHITE + "Analyzing memory dumps to detect indicators of compromise" + Style.RESET_ALL)
     print(Fore.YELLOW + "=" * 80 + Style.RESET_ALL + "\n")
 
-# Simulate memory analysis process
 def analyze_memory_dump(memory_dump):
     print(Fore.GREEN + f"[+] Analyzing memory dump: {memory_dump}" + Style.RESET_ALL)
     print(Fore.CYAN + "[*] Initializing Volatility Framework..." + Style.RESET_ALL)
     
-    # Simulate analysis steps
     analysis_steps = [
         "Determining Windows profile...",
         "Scanning for processes...",
@@ -79,7 +74,7 @@ def analyze_memory_dump(memory_dump):
         for i in tqdm(range(100), desc="    Progress", ncols=80, bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt}"):
             time.sleep(random.uniform(0.01, 0.05))  # Random delay between 0.01 and 0.05 seconds
     
-    # Simulated analysis results
+    #  analysis results
     print("\n" + Fore.GREEN + "[+] Analysis complete!" + Style.RESET_ALL)
     print(Fore.YELLOW + "=" * 80 + Style.RESET_ALL)
     print(Fore.WHITE + "Initial Findings:" + Style.RESET_ALL)
@@ -91,7 +86,6 @@ def analyze_memory_dump(memory_dump):
     
     print(Fore.GREEN + "\n[+] Results saved to evidence directory" + Style.RESET_ALL)
     
-    # Copy the prepared evidence files to simulate extraction from the memory dump
     if os.path.exists(EVIDENCE_PATH):
         print(Fore.CYAN + "[*] Extracting artifacts to evidence directory..." + Style.RESET_ALL)
         
@@ -132,7 +126,6 @@ def main():
         input("Press Enter to exit...")
         sys.exit(1)
     
-    # Simulate available memory dumps
     memory_dumps = [
         "globomantics_workstation1.raw",
         "globomantics_server.raw"
